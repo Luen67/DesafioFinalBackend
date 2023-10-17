@@ -8,6 +8,7 @@ const userSchema = new Schema({
     },
     user_name:  {
         type: String,
+        unique: true,
         required: true
     },
     profile_image:  {
@@ -23,7 +24,7 @@ const userSchema = new Schema({
     role: {
         type: String,
         enum: {
-            values: ['Admin','Seller','Buyer']
+            values: ['Admin','User']
         }
     },
     password:  {

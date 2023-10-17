@@ -26,10 +26,10 @@ const postSchema = new Schema({
         type: String,
         required: true
     },
-    User: [{
-        type: mongoose.Schema.Types.ObjectId,
+    User: {
+        type: Schema.Types.ObjectId,
         ref: 'users'
-    }],
+    },
     Tags: {
         type: Array,
         required: true
@@ -40,5 +40,5 @@ const postSchema = new Schema({
 }
 );
 
-const Posts = model('posts', userSchema);
+const Posts = model('posts', postSchema);
 module.exports =  Posts;
